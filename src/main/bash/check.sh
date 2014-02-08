@@ -9,16 +9,13 @@ then
     sudo stop cor-site
 
     # Build new version:
+    # TODO: -mem setting for both sbt invocations
     sbt clean
+    # TODO: copy artifact to target directory
     sbt assembly
 
-    # Replace the current code with the new version:
-    rm -rf /opt/codingteam/cor-site
-    mkdir /opt/codingteam/cor-site
-    cp target/scala-2.10/*.jar /opt/codingteam/cor-site/
-
     # Replace the daemon script:
-    cp scr/main/upstart/cor-site.conf /etc/init/
+    cp src/main/upstart/cor-site.conf /etc/init/
 
     # Start the daemon:
     sudo start cor-site
