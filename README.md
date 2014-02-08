@@ -4,6 +4,7 @@ This is the code meant to service the http://codingteam.org.ru web site.
 
 ### Prerequisites
 For site functioning you will need:
+
 1. `java`
 2. `sbt`
 
