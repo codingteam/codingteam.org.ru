@@ -15,6 +15,11 @@ This project uses the `sbt` build system. So you should be able to execute
 
 to run the project for testing. For deployment see the next section.
 
+### Usage
+By default, service will redirect incoming HTTP requests to current codingteam@conference.jabber.ru log page.
+
+Use `http://your-server/version` URL for getting current site version.
+
 ### Deployment
 Currently our deployment procedure is tuned up for the Ubuntu 12.04 distributive.
 
