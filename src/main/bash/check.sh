@@ -1,6 +1,6 @@
 #!/bin/sh
 oldVersion=`git rev-parse HEAD`
-git pull origin master
+git pull
 newVersion=`git rev-parse HEAD`
 
 if [ $oldVersion != $newVersion ]
