@@ -9,13 +9,8 @@ then
     sudo stop cor-site
 
     # Build new version:
-    # TODO: -mem setting for both sbt invocations
-    sbt clean
-    # TODO: copy artifact to target directory
-    sbt assembly
-
-    # Replace the daemon script:
-    cp src/main/upstart/cor-site.conf /etc/init/
+    sbt clean -mem 128
+    sbt assembly -mem 128
 
     # Start the daemon:
     sudo start cor-site

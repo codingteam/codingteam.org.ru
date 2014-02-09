@@ -1,4 +1,4 @@
-name := "codingteam.org.ru-site"
+name := "cor-site"
 
 version := "0.1"
 

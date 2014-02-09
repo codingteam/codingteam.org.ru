@@ -8,20 +8,17 @@ For site functioning you will need:
 1. `java`
 2. `sbt`
 
-### Building
-This project uses the `sbt` build system. So you should be able to run
+### Running
+This project uses the `sbt` build system. So you should be able to execute
 
-```
-$ sbt assembly
-```
+    $ sbt run
 
-to build the project deployment-ready JAR package.
+to run the project for testing. For deployment see the next section.
 
 ### Deployment
 Create a user for project:
 
-    $ sudo useradd -r -s /bin/false cor-site
-    
+    $ sudo useradd -s /bin/false cor-site
 
 Make a directory where all will be stored:
 
@@ -43,3 +40,23 @@ Initialize the start script:
     $ sudo chown cor-site /etc/init/cor-site.conf
 
 Set up the `src/main/bash/check.sh` script for running as a `cron` job. Its working directory should be the git repository.
+
+### Uninstallation
+Delete the user:
+
+    $ sudo userdel cor-site
+    $ sudo rm -rf /home/cor-site
+
+Stop the daemon:
+
+    $ sudo stop cor-site
+
+Cleanup the upstart config:
+
+    $ sudo rm /etc/init/cor-site.conf
+
+Cleanup the `sudoers` file (remove all lines granting anything to the `cor-site` user).
+
+Remove the daemon directory:
+
+    $ sudo rm -rf /opt/codingteam/cor-site
