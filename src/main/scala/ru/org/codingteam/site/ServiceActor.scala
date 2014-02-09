@@ -35,5 +35,13 @@ trait Service extends HttpService {
           s"http://0xd34df00d.me/logs/chat/codingteam@conference.jabber.ru/$year/$month/$day.html",
           StatusCodes.Found)
       }
+    } ~
+    path("version") {
+      get {
+        val version = Option(classOf[Service].getPackage.getImplementationVersion).getOrElse("development")
+        complete {
+          s"$version"
+        }
+      }
     }
 }
