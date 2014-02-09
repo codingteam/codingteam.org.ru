@@ -24,7 +24,7 @@ trait Service extends HttpService {
 
   val myRoute =
     path("") {
-      get {
+      dynamic {
         val date = DateTime.now
 
         val year = date.year
