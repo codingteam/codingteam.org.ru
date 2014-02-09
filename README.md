@@ -42,7 +42,7 @@ Initialize the start script:
 
 Tune up port configuration:
 
-    $ sudo setcap cap_net_bind_service=+ep /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java
+    $ sudo setcap cap_net_bind_service=+ep /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
 
 (Replace `/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java` with the path to the Java binary. You may also prefer some
 other way of tuning the ports.)
