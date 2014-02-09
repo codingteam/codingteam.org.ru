@@ -16,9 +16,11 @@ This project uses the `sbt` build system. So you should be able to execute
 to run the project for testing. For deployment see the next section.
 
 ### Deployment
+Currently our deployment procedure is tuned up for the Ubuntu 12.04 distributive.
+
 Create a user for project:
 
-    $ sudo useradd -s /bin/false cor-site
+    $ sudo useradd -m -s /bin/false cor-site
 
 Make a directory where all will be stored:
 
@@ -37,9 +39,24 @@ Clone git repository:
 Initialize the start script:
 
     $ sudo cp src/main/upstart/cor-site.conf /etc/init/
-    $ sudo chown cor-site /etc/init/cor-site.conf
 
-Set up the `src/main/bash/check.sh` script for running as a `cron` job. Its working directory should be the git repository.
+Tune up port configuration:
+
+    $ sudo setcap cap_net_bind_service=+ep /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java
+
+(Replace `/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java` with the path to the Java binary. You may also prefer some
+other way of tuning the ports.)
+
+Set up the `src/main/bash/check.sh` script for running as a `cron` job. Its working directory should be the git
+repository. Execute
+
+    $ sudo crontab -e -u cor-site
+
+and add the file, for example,
+
+    */5 * * * * cd /opt/codingteam/cor-site && /opt/codingteam/cor-site/src/main/bash/check.sh 2>&1 >> $HOME/check.log
+
+Look for logs at `/var/log/upstart/cor-site.log`.
 
 ### Uninstallation
 Delete the user:
