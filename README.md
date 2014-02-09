@@ -54,7 +54,7 @@ repository. Execute
 
 and add the file, for example,
 
-    */5 * * * * cd /opt/codingteam/cor-site && /opt/codingteam/cor-site/src/main/bash/check.sh 2>&1 >> $HOME/check.log
+    */5 * * * * cd /opt/codingteam/cor-site && bash ./src/main/bash/check.sh 2>&1 >> $HOME/check.log
 
 Look for logs at `/var/log/upstart/cor-site.log`.
 
