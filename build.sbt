@@ -1,6 +1,6 @@
 name := "cor-site"
 
-version := "0.2"
+version := "0.3"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
