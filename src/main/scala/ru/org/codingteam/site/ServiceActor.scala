@@ -2,8 +2,8 @@ package ru.org.codingteam.site
 
 import akka.actor.Actor
 import spray.routing._
-import spray.http._
-import MediaTypes._
+import org.joda.time.{DateTimeZone, DateTime}
+import spray.http.StatusCodes
 
 // we don't implement our route structure directly in the service actor because
 // we want to be able to test it independently, without having to spin up an actor
@@ -24,12 +24,13 @@ trait Service extends HttpService {
 
   val myRoute =
     path("") {
-      get {
-        val date = DateTime.now
+      dynamic {
+        val timeZoneOffset = 4
+        val date = DateTime.now(DateTimeZone.forOffsetHours(timeZoneOffset))
 
-        val year = date.year
-        val month = "%02d" format date.month
-        val day = "%02d" format date.day
+        val year = date.getYear
+        val month = "%02d" format date.getMonthOfYear
+        val day = "%02d" format date.getDayOfMonth
 
         redirect(
           s"http://0xd34df00d.me/logs/chat/codingteam@conference.jabber.ru/$year/$month/$day.html",
