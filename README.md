@@ -21,7 +21,7 @@ By default, service will redirect incoming HTTP requests to current codingteam@c
 Use `http://your-server/version` URL for getting current site version.
 
 ### Deployment
-Currently our deployment procedure is tuned up for the Ubuntu 12.04 distributive.
+Currently our deployment procedure is tuned up for the Ubuntu 12.04 distribution.
 
 Create a user for project:
 
