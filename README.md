@@ -7,12 +7,23 @@ For site functioning you need [PostgreSQL](http://www.postgresql.org/) and worki
 installation.
 
 You should setup the database and a database user for site. Separate databases are used for testing and production
-environments.
+environments. The default database names are `"codingteam-site"` and `"codingteam-site_test"`.
 
 ### Configuration
 Check [config/settings.yml](config/settings.yml). Test settings are stored in
 [config/test-settings.yml](config/test-settings.yml).
 
+### Building
+
+    $ cabal install --enable-tests
+
+### Running
+For development deployment run
+
+    $ yesod devel [-p PORT]
+
+After that visit http://localhost:PORT (3000 is default port for Yesod).
+
 ### Testing
 
-    $ cabal install --run-tests
+    $ yesod test
