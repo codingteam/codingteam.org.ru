@@ -4,14 +4,11 @@ import Import
 import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3,
                               withSmallInput)
 
---getLogPageSrc :: IO Text
---getLogPageSrc = do
-
+import External.LogAccess
 
 getIndexR :: Handler Html
 getIndexR = do
+    logPageSrc <- liftIO $ getTodayLogUrl
     defaultLayout $ do
-        --logPageSrc <- getLogPageSrc
         setTitle "codingteam"
-
         $(widgetFile "index/index")
