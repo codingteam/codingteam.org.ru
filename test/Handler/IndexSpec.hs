@@ -7,7 +7,7 @@ spec = withApp $ do
     it "loads the index and checks it looks right" $ do
         get IndexR
         statusIs 200
-        htmlAllContain "h1" "Welcome to Yesod"
+        htmlAllContain "h1" "codingteam"
 
         request $ do
             setMethod "POST"
