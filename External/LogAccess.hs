@@ -15,7 +15,7 @@ getLogUrl :: (Integer, Int, Int) -> Text
 getLogUrl (year, month, day) = concat [logUrlPrefix, "/", pad 4 year, "/", pad 2 month, "/", pad 2 day, ".html"]
 
 getDate :: IO (Integer, Int, Int)
-getDate = getCurrentTime >>= return . toGregorian . utctDay
+getDate = getCurrentTime >>= return . toGregorian . utctDay -- TODO: Use date in proper timezone.
 
 getTodayLogUrl :: IO Text
 getTodayLogUrl = do
