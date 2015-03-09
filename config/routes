@@ -5,3 +5,4 @@
 /robots.txt RobotsR GET
 
 / IndexR GET
+/resources ResourcesR GET
