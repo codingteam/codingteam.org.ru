@@ -8,9 +8,7 @@ addons:
   postgresql: "9.3"
 before_script:
   - psql -c "create database \"codingteam-site_test\" owner postgres encoding 'utf8';" -U postgres
-env:
-  - PGUSER=postgres
-  - PGPASS=
+env: PGUSER=postgres PGPASS=
 notifications:
   email:
     - friedrich@fornever.me
