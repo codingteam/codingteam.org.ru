@@ -1,0 +1,14 @@
+language: haskell
+ghc: 7.8
+before_install:
+  - |
+    cabal install happy alex
+    export PATH=$HOME/.cabal/bin:$PATH
+addons:
+  postgresql: "9.3"
+before_script:
+  - psql -c "create database \"codingteam-site_test\" owner postgres encoding 'utf8';" -U postgres
+env: PGUSER=postgres PGPASS=''
+notifications:
+  email:
+    - friedrich@fornever.me

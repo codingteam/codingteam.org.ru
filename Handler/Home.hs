@@ -1,9 +1,6 @@
-module Handler.Index (getIndexR) where
+module Handler.Home (getIndexR, getResourcesR) where
 
 import Import
-import Yesod.Form.Bootstrap3 (BootstrapFormLayout (..), renderBootstrap3,
-                              withSmallInput)
-
 import External.LogAccess
 
 getIndexR :: Handler Html
@@ -12,3 +9,9 @@ getIndexR = do
     defaultLayout $ do
         setTitle "codingteam"
         $(widgetFile "index/index")
+
+getResourcesR :: Handler Html
+getResourcesR = do
+    defaultLayout $ do
+        setTitle "codingteam / Resources"
+        $(widgetFile "resources/resources")

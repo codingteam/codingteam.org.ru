@@ -1,5 +1,5 @@
 name:              codingteam-site
-version:           0.4.0
+version:           0.4.1
 cabal-version:     >= 1.8
 build-type:        Simple
 
@@ -22,7 +22,7 @@ library
                      Settings
                      Settings.StaticFiles
                      Handler.Common
-                     Handler.Index
+                     Handler.Home
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
