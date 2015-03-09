@@ -26,4 +26,3 @@ database:
   poolsize: "_env:PGPOOLSIZE:10"
 
 copyright: © 2015 codingteam
-#analytics: UA-YOURCODE

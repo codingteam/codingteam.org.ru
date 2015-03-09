@@ -50,8 +50,6 @@ data AppSettings = AppSettings
     -- Example app-specific configuration values.
     , appCopyright              :: Text
     -- ^ Copyright text to appear in the footer of the page
-    , appAnalytics              :: Maybe Text
-    -- ^ Google Analytics code
     }
 
 instance FromJSON AppSettings where
@@ -76,7 +74,6 @@ instance FromJSON AppSettings where
         appSkipCombining          <- o .:? "skip-combining"   .!= defaultDev
 
         appCopyright              <- o .: "copyright"
-        appAnalytics              <- o .:? "analytics"
 
         return AppSettings {..}
 
