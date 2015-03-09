@@ -35,12 +35,16 @@ After that visit http://localhost:PORT (3000 is default port for Yesod).
     $ yesod test
 
 ### Deployment
-You may use simple upstart configuration (this example relies on `cor-site` user, and application was built in
-`/opt/codingteam/codingteam.org.ru/`):
+
+You may use simple upstart configuration (this example relies on `cor-site` user, and application was deployed to
+`/opt/codingteam/codingteam.org.ru/`, and it uses http://codingteam.org.ru as the application root):
 
 ```
 setuid cor-site
 start on network
 chdir /opt/codingteam/codingteam.org.ru/
-exec /opt/codingteam/codingteam.org.ru/dist/
+env APPROOT=http://codingteam.org.ru
+exec /opt/codingteam/codingteam.org.ru/codingteam-site
 ```
+
+Put this configuration to `/etc/init/cor-site.conf` and upstart is configured.
