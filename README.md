@@ -7,7 +7,7 @@ For site functioning you need [PostgreSQL](http://www.postgresql.org/) and worki
 installation.
 
 You should setup the database and a database user for site. Separate databases are used for testing and production
-environments. The default database names are `"codingteam-site"` and `"codingteam-site_test"`.
+environments. The default database names are `"codingteam-site"` for production and `"postgres"` for testing.
 
 ### Configuration
 Check [config/settings.yml](config/settings.yml). Test settings are stored in

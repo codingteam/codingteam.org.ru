@@ -1,2 +1,4 @@
 database:
   database: codingteam-site_test
+  user:     "_env:PGUSER:postgres"
+  password: "_env:PGPASS:"
