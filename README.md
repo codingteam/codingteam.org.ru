@@ -1,4 +1,4 @@
-codingteam.org.ru
+codingteam.org.ru [BuildStatus](https://travis-ci.org/codingteam/codingteam.org.ru.png?branch=develop)](https://travis-ci.org/codingteam/codingteam.org.ru)
 =================
 This is the code meant to service the [codingteam.org.ru](http://codingteam.org.ru) web site.
 
