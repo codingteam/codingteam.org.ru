@@ -1,6 +1,6 @@
 <h1>codingteam
 
 <p>Welcome! Codingteam is an open community of engineers and programmers.
-<p>And here is today conference logs:
+<p>And here're today's conference logs:
 <iframe .logs
         src=#{logPageSrc}>
