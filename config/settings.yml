@@ -25,4 +25,4 @@ database:
   database: "_env:PGDATABASE:codingteam-site"
   poolsize: "_env:PGPOOLSIZE:10"
 
-copyright: © 2015 codingteam
+copyright: © 2016 codingteam
