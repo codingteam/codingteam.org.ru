@@ -16,6 +16,10 @@
             <i .fa .fa-bitbucket>
             Bitbucket team
     <li>
+        <a href="https://gitlab.com/groups/codingteam">
+            <i .fa .fa-code-fork>
+            GitLab team
+    <li>
         <a href="http://www.loglist.net/">
             <i .fa .fa-ambulance>
             LogList
