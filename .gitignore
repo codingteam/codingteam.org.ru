@@ -10,3 +10,5 @@ yesod-devel/
 cabal.sandbox.config
 
 /.idea/
+/bin/
+/obj/
