@@ -1,14 +1,3 @@
-dist*
-static/tmp/
-static/combined/
-config/client_session_key.aes
-*.hi
-*.o
-*.sqlite3
-yesod-devel/
-.cabal-sandbox
-cabal.sandbox.config
-
-/.idea/
+/.vs/
 /bin/
 /obj/
