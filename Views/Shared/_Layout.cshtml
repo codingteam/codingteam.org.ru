@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewData["Title"]</title>
+        <link rel="icon" type="image/png" href="favicon.png">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        @RenderSection("Head", required: false)
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav class="navbar navbar-default">
+                    <a class="navbar-brand" href="~/">codingteam</a>
+                    <ul class="nav navbar-nav">
+                        <li><a href="~/">Logs</a></li>
+                        <li><a href="~/resources">Resources</a>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div id="main" role="main">
+            @RenderBody()
+        </div>
+        <footer>© 2016 codingteam</footer>
+    </body>
+</html>
