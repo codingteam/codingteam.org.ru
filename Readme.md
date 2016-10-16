@@ -13,8 +13,8 @@ Core][dotnet] tool.
 
 The only configuration parameter is the HTTP binding. Change the binding using
 `ASPNETCORE_URLS` environment variable. For example,
-`ASPNETCORE_URLS=http://0.0.0.0:80` means listening all port 80 for all
-addresses. The default setting is `http://localhost:5000`.
+`ASPNETCORE_URLS=http://0.0.0.0:80` means listening port 80 for all addresses.
+The default setting is `http://localhost:5000`.
 
 ### Building
 
