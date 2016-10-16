@@ -1,0 +1,11 @@
+@import url('bootstrap.css');
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+h1 {
+    text-align: center;
+}
+
+iframe.logs {
+    width: 100%;
+    height: 70vh;
+}

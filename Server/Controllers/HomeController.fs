@@ -19,5 +19,6 @@ type HomeController() =
         this.ViewData.["LogUrl"] <- getTodayLogUrl ()
         this.View()
 
+    [<Route("resources")>]
     member this.Resources() =
         this.View()

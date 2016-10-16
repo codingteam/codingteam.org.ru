@@ -4,7 +4,7 @@
         <title>@ViewData["Title"]</title>
         <link rel="icon" type="image/png" href="favicon.png">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        @RenderSection("Head", required: false)
+        <link rel="stylesheet" href="~/style.css"/>
     </head>
     <body>
         <div class="container">
@@ -17,10 +17,10 @@
                     </ul>
                 </nav>
             </header>
+            <div id="main" role="main">
+                @RenderBody()
+            </div>
+            <footer>© 2016 codingteam</footer>
         </div>
-        <div id="main" role="main">
-            @RenderBody()
-        </div>
-        <footer>© 2016 codingteam</footer>
     </body>
 </html>
