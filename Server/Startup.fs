@@ -17,6 +17,8 @@ type Startup(env : IHostingEnvironment) =
         loggerFactory.AddConsole(configuration.GetSection "Logging") |> ignore
         loggerFactory.AddDebug() |> ignore
 
+        app.UseStaticFiles() |> ignore
+
         app.UseMvc (fun routes ->
             routes.MapRoute("default", "{controller=Home}/{action=Index}")
             |> ignore)
