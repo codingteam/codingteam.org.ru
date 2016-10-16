@@ -6,22 +6,29 @@
     "compilerName": "fsc",
     "compile": {
       "includeFiles": [
-        "Program.fs"
+        "src/Server/Startup.fs",
+        "src/Server/Program.fs"
       ]
     }
+  },
+  "frameworks": {
+    "netcoreapp1.0": {}
+  },
+  "dependencies": {
+      "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
+      "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+      "Microsoft.NETCore.App": {
+        "type": "platform",
+        "version": "1.0.1"
+      },
+      "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
   },
   "tools": {
     "dotnet-compile-fsc":"1.0.0-preview2-*"
   },
-  "frameworks": {
-    "netcoreapp1.0": {
-      "dependencies": {
-        "Microsoft.NETCore.App": {
-          "type": "platform",
-          "version": "1.0.1"
-        },
-        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
-      }
+  "runtimeOptions": {
+    "configProperties": {
+      "System.GC.Server": true
     }
   }
 }
