@@ -67,7 +67,7 @@ exec dotnet /opt/codingteam/codingteam.org.ru/codingteam.org.ru.dll
 
 Put this configuration to `/etc/init/cor-site.conf`.
 
-[codingteam.org.ru]: http://codingteam.org.ru/
+[codingteam.org.ru]: https://codingteam.org.ru/
 [dotnet]: https://dot.net/
 [status-travis]: https://travis-ci.org/codingteam/codingteam.org.ru
 
