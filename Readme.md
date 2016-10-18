@@ -16,6 +16,16 @@ The only configuration parameter is the HTTP binding. Change the binding using
 `ASPNETCORE_URLS=http://0.0.0.0:80` means listening port 80 for all addresses.
 The default setting is `http://localhost:5000`.
 
+You may specify some of the application settings in the `appsettings.json` file.
+The main settings section is `CtorSettings`:
+
+```js
+"CtorSettings": {
+    "LogUrlPrefix": "http://<url to log service without last backslash>",
+    "LogTimeZoneOffset": 0 // time zone offset on the log server
+},
+```
+
 ### Building
 
 Prepare for the build (set the dependencies up):

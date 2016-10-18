@@ -25,5 +25,7 @@ type Startup(env : IHostingEnvironment) =
         |> ignore
 
     member __.ConfigureServices(services : IServiceCollection) : unit =
-        services.AddMvc()
-        |> ignore
+        ignore <| services.AddOptions()
+        ignore <| services.Configure<CtorSettings>(configuration.GetSection "CtorSettings")
+
+        ignore <| services.AddMvc()

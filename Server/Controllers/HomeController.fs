@@ -4,15 +4,18 @@ open System
 open System.Globalization
 
 open Microsoft.AspNetCore.Mvc
+open Microsoft.Extensions.Options
 
-type HomeController() =
+open Codingteam.Site
+
+type HomeController(options : IOptions<CtorSettings>) =
     inherit Controller()
 
-    let logUrlPrefix = "http://0xd34df00d.me/logs/chat/codingteam@conference.jabber.ru"
+    let config = options.Value
     let getLogUrl (date : DateTime) =
         let dateString = date.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture)
-        sprintf "%s/%s.html" logUrlPrefix dateString
-    let logTimezone = TimeSpan.FromHours 4.0
+        sprintf "%s/%s.html" config.LogUrlPrefix dateString
+    let logTimezone = TimeSpan.FromHours <| double config.LogTimeZoneOffset
     let getTodayLogUrl () = getLogUrl <| DateTime.UtcNow.Date + logTimezone
 
     member this.Index() =
