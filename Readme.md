@@ -22,7 +22,7 @@ The main settings section is `CtorSettings`:
 ```js
 "CtorSettings": {
     "LogUrlPrefix": "http://<url to log service without last backslash>",
-    "LogTimeZoneOffset": 0 // time zone offset on the log server
+    "LogTimeZoneOffset": 0 // time zone offset on the log server (in hours)
 },
 ```
 
