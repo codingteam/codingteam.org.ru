@@ -1,2 +1,2 @@
-cd /opt/codingteam/codingteam.org.ru/
+set -e
 sudo /sbin/start cor-site

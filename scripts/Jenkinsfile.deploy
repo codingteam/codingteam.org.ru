@@ -59,7 +59,7 @@ node {
     def isSuccess = currentBuild.result == null
     def buildStatus = isSuccess ? 'SUCCESS' : currentBuild.result
 
-    mail to: MAINTAINERS, subject: "${env.JOB_NAME}#${env.BUILD_NUMBER}: ${buildStatus}", body: """Build #${env.BUILD_NUMBER} of Jenkins job ${env.JOB_NAME} is finished with status ${buildStatus}.
+    mail to: MAINTAINERS, subject: "${env.JOB_NAME}#${env.BUILD_NUMBER}: ${buildStatus}", body: """Build #${env.BUILD_NUMBER} of Jenkins job ${env.JOB_NAME} finished with status ${buildStatus}.
 
 Check ${env.BUILD_URL} for details."""
 }
