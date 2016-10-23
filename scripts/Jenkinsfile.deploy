@@ -17,8 +17,8 @@ node {
             url: 'git@github.com:codingteam/codingteam.org.ru.git'
 
     stage 'Clean'
-    bat 'rd /s /q bin'
-    bat 'rd /s /q obj'
+    bat 'if exist bin\\ rd /s /q bin'
+    bat 'if exist obj\\ rd /s /q obj'
 
     stage 'Build'
     bat 'dotnet restore'
