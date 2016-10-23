@@ -26,7 +26,7 @@ node {
     bat 'dotnet publish -c release'
 
     stage 'Prepare'
-    writeFile file: 'bin/release/netcoreapp1.0/publish/appsettings.json' APP_SETTINGS
+    writeFile file: 'bin/release/netcoreapp1.0/publish/appsettings.json', text: APP_SETTINGS
 
     def keyFile = 'cor-site.key'
     writeFile file: keyFile, text: SSH_PRIVATE_KEY
