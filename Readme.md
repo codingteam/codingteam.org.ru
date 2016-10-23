@@ -54,20 +54,12 @@ $ dotnet publish -c release
 
 ### Deployment
 
-You may use this simple upstart configuration. The sample assumes the `cor-site`
-user existence and that the application has been deployed to
-`/opt/codingteam/codingteam.org.ru/`.
-
-```
-setuid cor-site
-start on network
-chdir /opt/codingteam/codingteam.org.ru/
-exec dotnet /opt/codingteam/codingteam.org.ru/codingteam.org.ru.dll
-```
-
-Put this configuration to `/etc/init/cor-site.conf`.
+The site can be deployed to any platform capable of running [dotnet][]. See
+[deployment documentation][deployment] for information about current production
+environment.
 
 [codingteam.org.ru]: https://codingteam.org.ru/
+[deployment]: docs/deployment.md
 [dotnet]: https://dot.net/
 [status-travis]: https://travis-ci.org/codingteam/codingteam.org.ru
 
