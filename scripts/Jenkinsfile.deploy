@@ -41,7 +41,7 @@ node {
             executeScript 'scripts\\stop.sh'
 
             stage 'Upload'
-            bat "$SCP -o StrictHostKeyChecking=no -i $keyFile -P $SSH_PORT bin/release/netcoreapp1.0/publish/* $SSH_LOGIN@$SSH_HOST:/opt/codingteam/codingteam.org.ru"
+            bat "$SCP -o StrictHostKeyChecking=no -i $keyFile -P $SSH_PORT -rp bin/release/netcoreapp1.0/publish/* $SSH_LOGIN@$SSH_HOST:/opt/codingteam/codingteam.org.ru"
 
             stage 'Start'
             executeScript 'scripts\\start.sh'
