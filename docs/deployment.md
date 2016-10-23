@@ -32,7 +32,7 @@ Make sure it's installed and all dependencies are met. Consult
 
 The deployment is performed over SSH, so make sure that CI server have SSH
 access to the target machine as the same `cor-site` user, and that `cor-site`
-have a permission to execute the commands `sudo /sbin/stop cor-site` and
+has permissions to execute the commands `sudo /sbin/stop cor-site` and
 `sudo /sbin/start cor-site` (and nothing else).
 
 [dotnet]: https://dot.net/
