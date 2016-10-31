@@ -1,6 +1,15 @@
 @import url('bootstrap.css');
 @import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
+.navbar-brand {
+    height: 50px;
+    padding: 0 0 0 0;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
 h1 {
     text-align: center;
 }
