@@ -16,8 +16,8 @@
     },
     "codingteam-logo": {
       "version": "1.0.0",
-      "from": "codingteam/logo#feature/npm",
-      "resolved": "git://github.com/codingteam/logo.git#87f41f95f82c21227a904c7d249d3096a22ab582",
+      "from": "codingteam/logo#1.0.0",
+      "resolved": "git://github.com/codingteam/logo.git#be3900af8ace197afa6a62c0077e63ad087464f4",
       "dev": true
     },
     "concat-map": {
@@ -28,7 +28,7 @@
     },
     "copyfiles": {
       "version": "1.0.0",
-      "from": "copyfiles@latest",
+      "from": "copyfiles@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/copyfiles/-/copyfiles-1.0.0.tgz",
       "dev": true
     },

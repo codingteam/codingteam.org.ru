@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/codingteam/codingteam.org.ru#readme",
   "devDependencies": {
-    "codingteam-logo": "github:codingteam/logo#feature/npm",
+    "codingteam-logo": "github:codingteam/logo#1.0.0",
     "copyfiles": "^1.0.0"
   }
 }
