@@ -1,0 +1,26 @@
+{
+  "name": "codingteam.org.ru",
+  "version": "0.6.1",
+  "description": "codingteam.org.ru site",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codingteam/codingteam.org.ru.git"
+  },
+  "scripts": {
+    "build": "copyfiles -f node_modules/codingteam-logo/logo-transparent-dark.svg wwwroot/images/"
+  },
+  "keywords": [
+    "site",
+    "codingteam"
+  ],
+  "author": "codingteam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codingteam/codingteam.org.ru/issues"
+  },
+  "homepage": "https://github.com/codingteam/codingteam.org.ru#readme",
+  "devDependencies": {
+    "codingteam-logo": "github:codingteam/logo#feature/npm",
+    "copyfiles": "^1.0.0"
+  }
+}

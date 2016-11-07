@@ -7,7 +7,7 @@ site.
 ### Prerequisites
 
 To install and run the site, you need to install crossplatform [.NET
-Core][dotnet] tool.
+Core][dotnet] tool and [Node.js package manager][node-js].
 
 ### Configuration
 
@@ -31,12 +31,14 @@ The main settings section is `CtorSettings`:
 Prepare for the build (set the dependencies up):
 
 ```console
+$ npm install
 $ dotnet restore
 ```
 
 Build the project:
 
 ```console
+$ npm run build
 $ dotnet build
 ```
 
@@ -61,6 +63,7 @@ environment.
 [codingteam.org.ru]: https://codingteam.org.ru/
 [deployment]: docs/deployment.md
 [dotnet]: https://dot.net/
+[node-js]: https://nodejs.org/en/
 [status-travis]: https://travis-ci.org/codingteam/codingteam.org.ru
 
 [badge-travis]: https://travis-ci.org/codingteam/codingteam.org.ru.png?branch=develop
