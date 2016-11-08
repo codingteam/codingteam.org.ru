@@ -31,7 +31,9 @@ node {
         writeFile file: keyFile, text: SSH_PRIVATE_KEY
 
         stage 'Build'
+        bat 'npm install'
         bat 'dotnet restore'
+        bat 'npm run build'
         bat 'dotnet build'
         bat 'dotnet publish -c release'
 
