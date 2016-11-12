@@ -1,4 +1,4 @@
-// This script will build and deploy the current LogList version to the target server.
+// This script will build and deploy the current site version to the target server.
 // Required properties:
 // - APP_SETTINGS: appsettigs.json content
 // - GIT_BRANCH: name of the branch to deploy
