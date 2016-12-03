@@ -41,7 +41,7 @@ Make sure it's installed and all dependencies are met. Consult
 
 The deployment is performed over SSH, so make sure that CI server have SSH
 access to the target machine as the same `cor-site` user, and that `cor-site`
-has permissions to execute the commands `sudo /usr/bin/systemctl stop cor-site`
+has permissions to execute the commands `sudo /usr/bin/systemctl start cor-site`
 and `sudo /usr/bin/systemctl stop cor-site` (and nothing else).
 
 [dotnet]: https://dot.net/
