@@ -1,6 +1,7 @@
 /.vs/
 /.vscode/
-/bin/
 /node_modules/
-/obj/
-/wwwroot/images/
+/Ctor.Server/wwwroot/images/
+
+bin/
+obj/

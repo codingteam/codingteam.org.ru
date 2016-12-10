@@ -17,43 +17,37 @@ node {
             url: 'git@github.com:codingteam/codingteam.org.ru.git'
 
     stage 'Clean'
-    bat 'if exist codingteam.org.ru\\ rd /s /q codingteam.org.ru'
+    bat 'if exist Ctor.Server\\bin\\ rd /s /q Ctor.Server\\bin'
 
     stage 'Prepare'
-    bat 'powershell -c Move-Item * codingteam.org.ru/'
-    dir ('codingteam.org.ru') {
-        // We need to execute the whole script in the codingteam.org.ru
-        // directory because the current dotnet-cli names the project DLL based
-        // on the source directory name.
-        writeFile file: 'bin/release/netcoreapp1.0/publish/appsettings.json', text: APP_SETTINGS
+    writeFile file: 'Ctor.Server/bin/release/netcoreapp1.0/publish/appsettings.json', text: APP_SETTINGS
 
-        def keyFile = 'cor-site.key'
-        writeFile file: keyFile, text: SSH_PRIVATE_KEY
+    def keyFile = 'cor-site.key'
+    writeFile file: keyFile, text: SSH_PRIVATE_KEY
 
-        stage 'Build'
-        bat 'npm install'
-        bat 'dotnet restore'
-        bat 'npm run build'
-        bat 'dotnet build'
-        bat 'dotnet publish -c release'
+    stage 'Build'
+    bat 'npm install'
+    bat 'dotnet restore'
+    bat 'npm run build'
+    bat 'dotnet build Ctor.Server'
+    bat 'dotnet publish Ctor.Server -c release'
 
-        def executeScript = { scriptPath ->
-            bat "type $scriptPath | $SSH -o StrictHostKeyChecking=no -i $keyFile -p $SSH_PORT $SSH_LOGIN@$SSH_HOST"
-        }
+    def executeScript = { scriptPath ->
+        bat "type $scriptPath | $SSH -o StrictHostKeyChecking=no -i $keyFile -p $SSH_PORT $SSH_LOGIN@$SSH_HOST"
+    }
 
-        catchError {
-            try {
-                stage 'Stop'
-                executeScript 'scripts\\stop.sh'
+    catchError {
+        try {
+            stage 'Stop'
+            executeScript 'scripts\\stop.sh'
 
-                stage 'Upload'
-                bat "$SCP -o StrictHostKeyChecking=no -i $keyFile -P $SSH_PORT -rp bin/release/netcoreapp1.0/publish/* $SSH_LOGIN@$SSH_HOST:/opt/codingteam/codingteam.org.ru"
+            stage 'Upload'
+            bat "$SCP -o StrictHostKeyChecking=no -i $keyFile -P $SSH_PORT -rp Ctor.Server/bin/release/netcoreapp1.0/publish/* $SSH_LOGIN@$SSH_HOST:/opt/codingteam/codingteam.org.ru"
 
-                stage 'Start'
-                executeScript 'scripts\\start.sh'
-            } finally {
-                bat "del $keyFile"
-            }
+            stage 'Start'
+            executeScript 'scripts\\start.sh'
+        } finally {
+            bat "del $keyFile"
         }
     }
 

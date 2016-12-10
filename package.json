@@ -7,7 +7,7 @@
     "url": "git+https://github.com/codingteam/codingteam.org.ru.git"
   },
   "scripts": {
-    "build": "copyfiles -f node_modules/codingteam-logo/logo-transparent-dark.svg wwwroot/images/"
+    "build": "copyfiles -f node_modules/codingteam-logo/logo-transparent-dark.svg Ctor.Server/wwwroot/images/"
   },
   "keywords": [
     "site",

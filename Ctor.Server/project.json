@@ -6,10 +6,10 @@
         "compilerName": "fsc",
         "compile": {
             "includeFiles": [
-                "Server/CtorSettings.fs",
-                "Server/Controllers/HomeController.fs",
-                "Server/Startup.fs",
-                "Server/Program.fs"
+                "Backend/CtorSettings.fs",
+                "Backend/Controllers/HomeController.fs",
+                "Backend/Startup.fs",
+                "Backend/Program.fs"
             ]
         },
         "preserveCompilationContext": true
@@ -33,7 +33,7 @@
         "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
     },
     "tools": {
-        "dotnet-compile-fsc":"1.0.0-preview2-*"
+        "dotnet-compile-fsc": "1.0.0-preview2-*"
     },
     "publishOptions": {
         "include": [

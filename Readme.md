@@ -39,19 +39,20 @@ Build the project:
 
 ```console
 $ npm run build
-$ dotnet build
+$ dotnet build Ctor.Server
 ```
 
 Execute the local build:
 
 ```console
+$ cd Ctor.Server
 $ dotnet run
 ```
 
 Prepare the production-ready package:
 
 ```console
-$ dotnet publish -c release
+$ dotnet publish Ctor.Server -c release
 ```
 
 ### Deployment
