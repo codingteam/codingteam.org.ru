@@ -5,7 +5,7 @@
         "compilerName": "fsc",
         "compile": {
             "includeFiles": [
-                "Program.fs"
+                "Context.fs"
             ]
         },
         "preserveCompilationContext": true
@@ -14,6 +14,10 @@
         "netcoreapp1.0": {}
     },
     "dependencies": {
+        "Microsoft.EntityFrameworkCore.Design": {
+            "version": "1.1.0",
+            "type": "build"
+        },
         "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
         "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629",
         "Microsoft.NETCore.App": {
@@ -22,6 +26,7 @@
         }
     },
     "tools": {
-        "dotnet-compile-fsc": "1.0.0-preview2-*"
+        "dotnet-compile-fsc": "1.0.0-preview2-*",
+        "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.1.0-preview4"
     }
 }
