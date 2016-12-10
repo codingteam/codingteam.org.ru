@@ -1,2 +1,2 @@
 set -e
-sudo /usr/bin/systemctl start cor-site
+sudo /bin/systemctl start cor-site
