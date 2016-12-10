@@ -9,5 +9,5 @@ install:
     - dotnet restore
 script:
     - npm run build
-    - dotnet build
-    - dotnet publish
+    - dotnet build Ctor.Server
+    - dotnet publish Ctor.Server -c release
