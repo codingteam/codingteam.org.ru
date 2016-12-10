@@ -26,11 +26,13 @@
         "Microsoft.Extensions.Logging.Debug": "1.0.0",
         "Microsoft.Extensions.Options": "1.0.0",
         "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629",
         "Microsoft.NETCore.App": {
             "type": "platform",
             "version": "1.0.1"
         },
-        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
+
+        "Ctor.Database": "*"
     },
     "tools": {
         "dotnet-compile-fsc": "1.0.0-preview2-*"

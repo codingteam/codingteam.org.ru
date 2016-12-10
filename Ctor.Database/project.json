@@ -1,0 +1,27 @@
+{
+    "version": "0.6.3-*",
+    "buildOptions": {
+        "debugType": "portable",
+        "compilerName": "fsc",
+        "compile": {
+            "includeFiles": [
+                "Program.fs"
+            ]
+        },
+        "preserveCompilationContext": true
+    },
+    "frameworks": {
+        "netcoreapp1.0": {}
+    },
+    "dependencies": {
+        "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
+        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629",
+        "Microsoft.NETCore.App": {
+            "type": "platform",
+            "version": "1.0.1"
+        }
+    },
+    "tools": {
+        "dotnet-compile-fsc": "1.0.0-preview2-*"
+    }
+}
