@@ -14,10 +14,6 @@
         "netcoreapp1.0": {}
     },
     "dependencies": {
-        "Microsoft.EntityFrameworkCore.Design": {
-            "version": "1.1.0",
-            "type": "build"
-        },
         "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
         "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629",
         "Microsoft.NETCore.App": {

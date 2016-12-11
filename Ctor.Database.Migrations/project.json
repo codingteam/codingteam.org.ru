@@ -1,0 +1,17 @@
+{
+    "version": "1.0.0-*",
+    "buildOptions": {
+        "debugType": "portable"
+    },
+    "dependencies": {
+        "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
+
+        "Ctor.Database": "*"
+    },
+    "tools": {
+        "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.1.0-preview4"
+    },
+    "frameworks": {
+        "netcoreapp1.0": {}
+    }
+}

@@ -28,7 +28,7 @@
         "Microsoft.Extensions.Configuration.Json": "1.0.0",
         "Microsoft.Extensions.Logging.Console": "1.0.0",
         "Microsoft.Extensions.Logging.Debug": "1.0.0",
-        "Microsoft.Extensions.Options": "1.0.0",
+        "Microsoft.Extensions.Options": "1.1.0",
         "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
         "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629",
         "Microsoft.NETCore.App": {
@@ -36,7 +36,7 @@
             "version": "1.0.1"
         },
 
-        "Ctor.Database": "*"
+        "Ctor.Database.Migrations": "*"
     },
     "tools": {
         "dotnet-compile-fsc": "1.0.0-preview2-*"

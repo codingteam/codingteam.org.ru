@@ -6,6 +6,8 @@ open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Logging
 
+open Ctor.Database
+
 type Startup(env : IHostingEnvironment) =
     let configuration =
         ConfigurationBuilder().SetBasePath(env.ContentRootPath).AddJsonFile(
@@ -27,5 +29,6 @@ type Startup(env : IHostingEnvironment) =
     member __.ConfigureServices(services : IServiceCollection) : unit =
         ignore <| services.AddOptions()
         ignore <| services.Configure<CtorSettings>(configuration.GetSection "CtorSettings")
+        ignore <| services.AddDbContext<Context>()
 
         ignore <| services.AddMvc()
