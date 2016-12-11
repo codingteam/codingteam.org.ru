@@ -5,6 +5,7 @@
         "compilerName": "fsc",
         "compile": {
             "includeFiles": [
+                "Log.fs",
                 "Context.fs"
             ]
         },
@@ -14,7 +15,7 @@
         "netcoreapp1.0": {}
     },
     "dependencies": {
-        "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
+        "Microsoft.EntityFrameworkCore": "1.0.0",
         "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
     },
     "tools": {

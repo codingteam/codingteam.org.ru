@@ -2,6 +2,7 @@ namespace Codingteam.Site
 
 open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
+open Microsoft.EntityFrameworkCore
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Logging
@@ -16,19 +17,27 @@ type Startup(env : IHostingEnvironment) =
             reloadOnChange = true).Build()
 
     member __.Configure(app : IApplicationBuilder, loggerFactory : ILoggerFactory) : unit =
-        loggerFactory.AddConsole(configuration.GetSection "Logging") |> ignore
-        loggerFactory.AddDebug() |> ignore
+        let migrateDb() =
+            use context = app.ApplicationServices.GetService<Context>()
+            ignore <| context.Database.EnsureCreated()
+            context.Database.Migrate()
 
-        app.UseStaticFiles() |> ignore
+        ignore <| loggerFactory.AddConsole(configuration.GetSection "Logging")
+            .AddDebug()
 
-        app.UseMvc (fun routes ->
-            routes.MapRoute("default", "{controller=Home}/{action=Index}")
-            |> ignore)
-        |> ignore
+        ignore <| app.UseStaticFiles()
+            .UseMvc (fun routes ->
+                ignore <| routes.MapRoute("default", "{controller=Home}/{action=Index}"))
+
+        migrateDb()
 
     member __.ConfigureServices(services : IServiceCollection) : unit =
-        ignore <| services.AddOptions()
-        ignore <| services.Configure<CtorSettings>(configuration.GetSection "CtorSettings")
-        ignore <| services.AddDbContext<Context>()
+        let configureDb (db : DbContextOptionsBuilder) =
+            ignore <| db.UseSqlite(
+                configuration.GetConnectionString("Ctor.Database"),
+                fun b -> ignore <| b.MigrationsAssembly("Ctor.Database.Migrations"))
 
-        ignore <| services.AddMvc()
+        ignore <| services.AddOptions()
+            .Configure<CtorSettings>(configuration.GetSection "CtorSettings")
+            .AddDbContext<Context>(configureDb)
+            .AddMvc()

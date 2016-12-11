@@ -4,7 +4,7 @@
         "debugType": "portable"
     },
     "dependencies": {
-        "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
+        "Microsoft.EntityFrameworkCore.Relational": "1.1.0",
 
         "Ctor.Database": "*"
     },

@@ -1,7 +1,5 @@
-How to add a database migration
-===============================
+How to manage database migrations
+=================================
 
-```console
-$ cd Ctor.Database.Migrations
-$ dotnet ef --startup-project ../Ctor.Server migrations add MigrationName
-```
+Migration management with EF Core and F# is a bit tricky; that's why there're a
+pair of scripts to manage the migrations in the `scripts` directory.
