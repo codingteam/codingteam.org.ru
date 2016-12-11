@@ -15,14 +15,9 @@
     },
     "dependencies": {
         "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
-        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629",
-        "Microsoft.NETCore.App": {
-            "type": "platform",
-            "version": "1.0.1"
-        }
+        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
     },
     "tools": {
-        "dotnet-compile-fsc": "1.0.0-preview2-*",
-        "Microsoft.EntityFrameworkCore.Tools.DotNet": "1.1.0-preview4"
+        "dotnet-compile-fsc": "1.0.0-preview2-*"
     }
 }

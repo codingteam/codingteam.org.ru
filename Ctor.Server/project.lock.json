@@ -3700,8 +3700,7 @@
         "framework": ".NETCoreApp,Version=v1.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "1.0.0",
-          "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629",
-          "Microsoft.NETCore.App": "1.0.1"
+          "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
         }
       },
       "Ctor.Database.Migrations/1.0.0": {
