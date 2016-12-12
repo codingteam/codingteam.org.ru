@@ -5,7 +5,8 @@
         "compilerName": "fsc",
         "compile": {
             "includeFiles": [
-                "Program.fs"
+                "SharpXmppHelper.fs",
+                "Robot.fs"
             ]
         },
         "preserveCompilationContext": true
@@ -14,11 +15,13 @@
         "netcoreapp1.0": {}
     },
     "dependencies": {
+        "Microsoft.Extensions.Logging": "1.1.0",
+        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629",
         "Microsoft.NETCore.App": {
             "type": "platform",
             "version": "1.0.1"
         },
-        "Microsoft.FSharp.Core.netcore": "1.0.0-alpha-160629"
+        "SharpXMPP.Shared": "0.0.1-pre01"
     },
     "tools": {
         "dotnet-compile-fsc": "1.0.0-preview2-*"
