@@ -16,10 +16,9 @@ node {
             credentialsId: GIT_CREDENTIALS,
             url: 'git@github.com:codingteam/codingteam.org.ru.git'
 
+    def keyFile = 'cor-site.key'
     stage('Configure') {
         writeFile file: 'bin/release/netcoreapp1.1/publish/appsettings.json', text: APP_SETTINGS
-
-        def keyFile = 'cor-site.key'
         writeFile file: keyFile, text: SSH_PRIVATE_KEY
     }
 
