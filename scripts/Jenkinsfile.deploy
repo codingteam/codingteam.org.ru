@@ -16,21 +16,14 @@ node {
             credentialsId: GIT_CREDENTIALS,
             url: 'git@github.com:codingteam/codingteam.org.ru.git'
 
-    stage 'Clean'
-    bat 'if exist codingteam.org.ru\\ rd /s /q codingteam.org.ru'
-
-    stage 'Prepare'
-    bat 'powershell -c Move-Item * codingteam.org.ru/'
-    dir ('codingteam.org.ru') {
-        // We need to execute the whole script in the codingteam.org.ru
-        // directory because the current dotnet-cli names the project DLL based
-        // on the source directory name.
-        writeFile file: 'bin/release/netcoreapp1.0/publish/appsettings.json', text: APP_SETTINGS
+    stage('Configure') {
+        writeFile file: 'bin/release/netcoreapp1.1/publish/appsettings.json', text: APP_SETTINGS
 
         def keyFile = 'cor-site.key'
         writeFile file: keyFile, text: SSH_PRIVATE_KEY
+    }
 
-        stage 'Build'
+    stage('Build') {
         bat 'npm install'
         bat 'dotnet restore'
         bat 'npm run build'
@@ -47,7 +40,7 @@ node {
                 executeScript 'scripts\\stop.sh'
 
                 stage 'Upload'
-                bat "$SCP -o StrictHostKeyChecking=no -i $keyFile -P $SSH_PORT -rp bin/release/netcoreapp1.0/publish/* $SSH_LOGIN@$SSH_HOST:/opt/codingteam/codingteam.org.ru"
+                bat "$SCP -o StrictHostKeyChecking=no -i $keyFile -P $SSH_PORT -rp bin/release/netcoreapp1.1/publish/* $SSH_LOGIN@$SSH_HOST:/opt/codingteam/codingteam.org.ru"
 
                 stage 'Start'
                 executeScript 'scripts\\start.sh'
