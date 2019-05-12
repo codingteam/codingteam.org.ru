@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.dotnetBuild
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.dotnetPublish
+import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.powerShell
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.script
 
 version = "2018.2"
@@ -38,6 +39,31 @@ object Deploy : BuildType({
             name = "publish"
             configuration = "Release"
             param("dotNetCoverage.dotCover.home.path", "%teamcity.tool.JetBrains.dotCover.CommandLineTools.DEFAULT%")
+        }
+        powerShell {
+            name = "configure"
+            workingDir = "bin/release/netcoreapp2.2/publish"
+            scriptMode = script {
+                content = """
+                        ${'$'}config = @'
+                        {
+                           "CtorSettings":{
+                              "LogUrlPrefix": "https://codingteam.org.ru/_logs/codingteam%40conference.jabber.ru",
+                              "LogTimeZoneOffset": 4
+                           },
+                           "Logging":{
+                              "IncludeScopes": false,
+                              "LogLevel":{
+                                 "Default": "Debug",
+                                 "System": "Information",
+                                 "Microsoft": "Information"
+                              }
+                           }
+                        }
+                        '@
+                        ${'$'}config | Out-File appsettings.json -Encoding utf8
+                    """.trimIndent()
+            }
         }
         step {
             name = "remote.stop"
