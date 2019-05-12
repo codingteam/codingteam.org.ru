@@ -1,8 +1,12 @@
-sudo: required
-dist: trusty
 language: csharp
+os: linux
+dist: bionic
+env:
+    global:
+        - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+        - DOTNET_CLI_TELEMETRY_OPTOUT=1
 mono: none
-dotnet: 2.1.301
+dotnet: 2.2
 node_js: 6
 install:
     - npm install
