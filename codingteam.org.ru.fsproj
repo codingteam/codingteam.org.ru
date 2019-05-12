@@ -6,12 +6,12 @@
         <Version>0.7.6</Version>
     </PropertyGroup>
     <ItemGroup>
-        <Compile Include="Server/CtorSettings.fs"/>
-        <Compile Include="Server/Controllers/HomeController.fs"/>
-        <Compile Include="Server/Startup.fs"/>
-        <Compile Include="Server/Program.fs"/>
+        <Compile Include="Server/CtorSettings.fs" />
+        <Compile Include="Server/Controllers/HomeController.fs" />
+        <Compile Include="Server/Startup.fs" />
+        <Compile Include="Server/Program.fs" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.App"/>
+        <PackageReference Include="Microsoft.AspNetCore.App" />
     </ItemGroup>
 </Project>
