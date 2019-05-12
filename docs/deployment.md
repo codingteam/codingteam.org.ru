@@ -32,17 +32,15 @@ The service should be enabled by `sudo systemctl enable cor-site`.
 CI environment
 --------------
 
-There is a Jenkins CI server set up to deploy `master` branch when any
-maintainer decides it's time to release.
+There is a TeamCity server set up to deploy `master` branch when we decide
+it's time to release.
 
-[Jenkins pipeline plugin][jenkins-pipeline-plugin] controls the build process.
-Make sure it's installed and all dependencies are met. Consult
-`scripts/Jenkinsfile.deploy` and set up all the build parameters on your server.
+The project uses [Kotlin DSL configuration][kotlin-dsl], so make sure it's
+enabled on the server.
 
 The deployment is performed over SSH, so make sure that CI server have SSH
 access to the target machine as the same `cor-site` user, and that `cor-site`
 has permissions to execute the commands `sudo /bin/systemctl start cor-site`
 and `sudo /bin/systemctl stop cor-site` (and nothing else).
 
-[dotnet]: https://dot.net/
-[jenkins-pipeline-plugin]: https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin
+[kotlin-dsl]: https://confluence.jetbrains.com/display/TCD18/Kotlin+DSL
