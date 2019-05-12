@@ -7,3 +7,5 @@
 /wwwroot/images/
 
 .idea/
+
+*.user
