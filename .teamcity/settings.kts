@@ -2,7 +2,6 @@ import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.dotnetBuild
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.dotnetPublish
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2018_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2018_2.vcs.GitVcsRoot
 
 /*
@@ -95,11 +94,6 @@ object Deploy : BuildType({
             param("teamcitySshKey", "cor-site")
             param("jetbrains.buildServer.deployer.targetUrl", "codingteam.org.ru")
             param("jetbrains.buildServer.sshexec.authMethod", "UPLOADED_KEY")
-        }
-    }
-
-    triggers {
-        vcs {
         }
     }
 })
