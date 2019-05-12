@@ -7,7 +7,7 @@ site.
 ### Prerequisites
 
 To build the application, you'll need to install [.NET Core SDK][dotnet]
-2.2.203+ and [Node.js][node-js] 10.13.0+.
+2.2.203+ and [Node.js][node-js] 6.0+.
 
 To run the application, only [.NET Core Runtime][dotnet] 2.2 is required.
 
