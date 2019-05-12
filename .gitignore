@@ -1,6 +1,9 @@
+/.teamcity/*.iml
 /.vs/
 /.vscode/
 /bin/
 /node_modules/
 /obj/
 /wwwroot/images/
+
+.idea/
