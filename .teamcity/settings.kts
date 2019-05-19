@@ -69,7 +69,10 @@ object Deploy : BuildType({
             name = "remote.stop"
             type = "ssh-exec-runner"
             param("jetbrains.buildServer.deployer.username", "cor-site")
-            param("jetbrains.buildServer.sshexec.command", "sudo /bin/systemctl stop cor-site")
+            param("jetbrains.buildServer.sshexec.command", """
+                sudo /bin/systemctl stop cor-site
+                rm -rf /opt/codingteam/codingteam.org.ru/*
+                """.trimIndent())
             param("jetbrains.buildServer.sshexec.port", "%ssh.port%")
             param("teamcitySshKey", "cor-site")
             param("jetbrains.buildServer.deployer.targetUrl", "codingteam.org.ru")
