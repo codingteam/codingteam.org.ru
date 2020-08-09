@@ -1,11 +1,11 @@
+/.idea/
 /.teamcity/*.iml
 /.vs/
 /.vscode/
-/bin/
-/node_modules/
-/obj/
-/wwwroot/images/
+/Server/wwwroot/images/
 
-.idea/
+bin/
+node_modules/
+obj/
 
 *.user

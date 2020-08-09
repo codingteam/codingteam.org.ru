@@ -33,21 +33,21 @@ The main settings section is `CtorSettings`:
 Prepare for the build (set the dependencies up):
 
 ```console
-$ npm install
 $ dotnet restore
+$ cs Server && npm install
 ```
 
 Build the project:
 
 ```console
-$ npm run build
-$ dotnet build
+$ cd Server && npm run build
+$ cd .. && dotnet build
 ```
 
 Execute the local build:
 
 ```console
-$ dotnet run
+$ dotnet run --project Server
 ```
 
 Prepare the production-ready package:
