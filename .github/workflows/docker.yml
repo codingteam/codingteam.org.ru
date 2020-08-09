@@ -17,3 +17,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: revenrof/codingteam.org.ru
           tag_with_ref: true
+          tags: latest
