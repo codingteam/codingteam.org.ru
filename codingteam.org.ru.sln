@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Server", "Server\Server.fsproj", "{AEBF72FE-57AD-44FB-8C7D-6199A5F795BA}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Codingteam.Site", "Codingteam.Site\Codingteam.Site.fsproj", "{AEBF72FE-57AD-44FB-8C7D-6199A5F795BA}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Server.Tests", "Server.Tests\Server.Tests.fsproj", "{320D6097-7980-4D37-8834-E3200B981C47}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Codingteam.Site.Tests", "Codingteam.Site.Tests\Codingteam.Site.Tests.fsproj", "{320D6097-7980-4D37-8834-E3200B981C47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

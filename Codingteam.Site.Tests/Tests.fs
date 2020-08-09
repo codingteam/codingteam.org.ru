@@ -2,12 +2,12 @@ module Tests
 
 open System
 open System.Globalization
-open Codingteam.Site.Controllers
+
 open Microsoft.Extensions.Options
 open Xunit
 
 open Codingteam.Site
-open Server
+open Codingteam.Site.Controllers
 
 let options() =
     { new IOptions<CtorSettings> with

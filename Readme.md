@@ -34,20 +34,20 @@ Prepare for the build (set the dependencies up):
 
 ```console
 $ dotnet restore
-$ cs Server && npm install
+$ cs Codingteam.Site && npm install
 ```
 
 Build the project:
 
 ```console
-$ cd Server && npm run build
+$ cd Codingteam.Site && npm run build
 $ cd .. && dotnet build
 ```
 
 Execute the local build:
 
 ```console
-$ dotnet run --project Server
+$ dotnet run --project Codingteam.Site
 ```
 
 Prepare the production-ready package:

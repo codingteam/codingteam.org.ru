@@ -2,7 +2,7 @@
 /.teamcity/*.iml
 /.vs/
 /.vscode/
-/Server/wwwroot/images/
+/Codingteam.Site/wwwroot/images/
 
 bin/
 node_modules/

@@ -6,8 +6,6 @@ open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Logging
 
-open global.Server
-
 type Startup(env : IHostingEnvironment) =
     let configuration =
         ConfigurationBuilder().SetBasePath(env.ContentRootPath).AddJsonFile(

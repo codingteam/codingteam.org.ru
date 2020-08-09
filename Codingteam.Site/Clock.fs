@@ -1,4 +1,4 @@
-﻿namespace Server
+﻿namespace Codingteam.Site
 
 open System
 

@@ -7,7 +7,6 @@ open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Options
 
 open Codingteam.Site
-open Server
 
 type HomeController(options: IOptions<CtorSettings>, clock: Clock) =
     inherit Controller()
