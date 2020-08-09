@@ -1,6 +1,6 @@
 {
   "name": "codingteam.org.ru",
-  "version": "0.7.5",
+  "version": "1.0.0",
   "lockfileVersion": 1,
   "requires": true,
   "dependencies": {
@@ -21,8 +21,8 @@
       }
     },
     "codingteam-logo": {
-      "version": "git://github.com/codingteam/logo.git#be3900af8ace197afa6a62c0077e63ad087464f4",
-      "from": "codingteam-logo@git://github.com/codingteam/logo.git#be3900af8ace197afa6a62c0077e63ad087464f4",
+      "version": "github:codingteam/logo#be3900af8ace197afa6a62c0077e63ad087464f4",
+      "from": "github:codingteam/logo#1.0.0",
       "dev": true
     },
     "concat-map": {
