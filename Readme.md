@@ -34,7 +34,7 @@ Prepare for the build (set the dependencies up):
 
 ```console
 $ dotnet restore
-$ cs Codingteam.Site && npm install
+$ cs Codingteam.Site && npm ci
 ```
 
 Build the project:
