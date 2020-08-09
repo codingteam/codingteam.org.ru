@@ -21,3 +21,4 @@ WORKDIR /app
 COPY --from=build-env /app/publish .
 
 ENTRYPOINT ["dotnet", "Codingteam.Site.dll"]
+EXPOSE 80
