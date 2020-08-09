@@ -7,8 +7,9 @@ open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Options
 
 open Codingteam.Site
+open Server
 
-type HomeController(options : IOptions<CtorSettings>) =
+type HomeController(options: IOptions<CtorSettings>, clock: Clock) =
     inherit Controller()
 
     let config = options.Value
@@ -16,7 +17,7 @@ type HomeController(options : IOptions<CtorSettings>) =
         let dateString = date.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture)
         sprintf "%s/%s.html" config.LogUrlPrefix dateString
     let logTimezone = TimeSpan.FromHours <| double config.LogTimeZoneOffset
-    let getTodayLogUrl () = getLogUrl <| DateTime.UtcNow.Date + logTimezone
+    let getTodayLogUrl () = getLogUrl <| clock.GetUtcDateTime() + logTimezone
 
     member this.Index() =
         this.ViewData.["LogUrl"] <- getTodayLogUrl ()

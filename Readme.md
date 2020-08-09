@@ -56,6 +56,14 @@ Prepare the production-ready package:
 $ dotnet publish -c release
 ```
 
+### Test
+
+To run the project tests, execute the following command:
+
+```console
+$ dotnet test
+```
+
 ### Deployment
 
 The site can be deployed to any platform capable of running [dotnet][]. See

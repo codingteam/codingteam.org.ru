@@ -6,6 +6,8 @@ open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Logging
 
+open global.Server
+
 type Startup(env : IHostingEnvironment) =
     let configuration =
         ConfigurationBuilder().SetBasePath(env.ContentRootPath).AddJsonFile(
@@ -25,7 +27,9 @@ type Startup(env : IHostingEnvironment) =
         |> ignore
 
     member __.ConfigureServices(services : IServiceCollection) : unit =
-        ignore <| services.AddOptions()
-        ignore <| services.Configure<CtorSettings>(configuration.GetSection "CtorSettings")
-
-        ignore <| services.AddMvc()
+        services
+            .AddOptions()
+            .Configure<CtorSettings>(configuration.GetSection "CtorSettings")
+            .AddSingleton(Clock.Default)
+            .AddMvc()
+        |> ignore
