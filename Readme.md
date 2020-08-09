@@ -74,7 +74,7 @@ This application uses Docker for deployment. To create a Docker image, use the
 following command:
 
 ```console
-$ docker build -t revenrof/codingteam.org.ru:$CODINGTEAM_ORG_RU_VERSION -t revenrof/codingteam.org.ru:latest .
+$ docker build -t codingteam/codingteam.org.ru:$CODINGTEAM_ORG_RU_VERSION -t codingteam/codingteam.org.ru:latest .
 ```
 
 (where `$CODINGTEAM_ORG_RU_VERSION` is the version for the image to use)
@@ -83,8 +83,8 @@ Then push the image to the Docker Hub:
 
 ```console
 $ docker login # if necessary
-$ docker push revenrof/codingteam.org.ru:$CODINGTEAM_ORG_RU_VERSION
-$ docker push revenrof/codingteam.org.ru:latest
+$ docker push codingteam/codingteam.org.ru:$CODINGTEAM_ORG_RU_VERSION
+$ docker push codingteam/codingteam.org.ru:latest
 ```
 
 Deploy
@@ -93,7 +93,7 @@ Deploy
 To install the application from Docker, run the following command:
 
 ```console
-$ docker run -d --restart unless-stopped -p:$PORT:80 --name $NAME -v $CONFIG:/app/appsettings.json revenrof/codingteam.org.ru:$VERSION
+$ docker run -d --restart unless-stopped -p:$PORT:80 --name $NAME -v $CONFIG:/app/appsettings.json codingteam/codingteam.org.ru:$VERSION
 ```
 
 Where
@@ -111,12 +111,12 @@ command uses the Bash syntax; adapt for your shell if necessary):
 PORT=5000
 NAME=codingteam.org.ru
 VERSION=latest
-docker run -d --restart unless-stopped -p $PORT:80 --name $NAME revenrof/codingteam.org.ru:$VERSION
+docker run -d --restart unless-stopped -p $PORT:80 --name $NAME codingteam/codingteam.org.ru:$VERSION
 ```
 
-[badge.docker]: https://img.shields.io/docker/v/revenrof/codingteam.org.ru?sort=semver
+[badge.docker]: https://img.shields.io/docker/v/codingteam/codingteam.org.ru?sort=semver
 
 [codingteam.org.ru]: https://codingteam.org.ru/
-[docker-hub]: https://hub.docker.com/r/revenrof/codingteam.org.ru
+[docker-hub]: https://hub.docker.com/r/codingteam/codingteam.org.ru
 [dotnet]: https://dot.net/
 [npm]: https://npmjs.com
