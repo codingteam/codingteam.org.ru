@@ -13,9 +13,11 @@ type Startup(env : IHostingEnvironment) =
             optional = false,
             reloadOnChange = true).Build()
 
-    member __.Configure(app : IApplicationBuilder, loggerFactory : ILoggerFactory) : unit =
-        loggerFactory.AddConsole(configuration.GetSection "Logging") |> ignore
-        loggerFactory.AddDebug() |> ignore
+    member __.Configure(app: IApplicationBuilder, loggingBuilder: ILoggingBuilder): unit =
+        loggingBuilder
+            .AddConfiguration(configuration.GetSection "Logging")
+            .AddDebug()
+        |> ignore
 
         app.UseStaticFiles() |> ignore
 
