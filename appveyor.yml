@@ -1,8 +1,0 @@
-version: 0.7.5.{build}
-before_build:
-    - npm install
-    - dotnet restore
-build_script:
-    - npm run build
-    - dotnet build
-    - dotnet publish

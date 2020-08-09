@@ -1,15 +1,14 @@
-codingteam.org.ru [![Build status][badge-travis]][status-travis]
+codingteam.org.ru
 =================
 
-This is the code that services [codingteam.org.ru][] web
-site.
+This is the code that services [codingteam.org.ru][] website.
 
 ### Prerequisites
 
 To build the application, you'll need to install [.NET Core SDK][dotnet]
-2.2.203+ and [Node.js][node-js] 6.0+.
+3.1.201+ and [Node.js][node-js] 6.14+.
 
-To run the application, only [.NET Core Runtime][dotnet] 2.2 is required.
+To run the application, [.NET Core Runtime][dotnet] 3.1 is required.
 
 ### Configuration
 
@@ -18,8 +17,8 @@ The only configuration parameter is the HTTP binding. Change the binding using
 `ASPNETCORE_URLS=http://0.0.0.0:80` means listening port 80 for all addresses.
 The default setting is `http://localhost:5000`.
 
-You may specify some of the application settings in the `appsettings.json` file.
-The main settings section is `CtorSettings`:
+You may specify the application settings in the `appsettings.json` file. The
+ main settings section is `CtorSettings`:
 
 ```js
 "CtorSettings": {
@@ -33,8 +32,7 @@ The main settings section is `CtorSettings`:
 Prepare for the build (set the dependencies up):
 
 ```console
-$ dotnet restore
-$ cs Codingteam.Site && npm ci
+$ cd Codingteam.Site && npm ci
 ```
 
 Build the project:
@@ -74,6 +72,3 @@ environment.
 [deployment]: docs/deployment.md
 [dotnet]: https://dot.net/
 [node-js]: https://nodejs.org/en/
-[status-travis]: https://travis-ci.org/codingteam/codingteam.org.ru
-
-[badge-travis]: https://travis-ci.org/codingteam/codingteam.org.ru.png?branch=develop
