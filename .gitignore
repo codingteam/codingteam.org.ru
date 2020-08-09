@@ -1,11 +1,9 @@
 /.idea/
-/.teamcity/*.iml
 /.vs/
-/.vscode/
 /Codingteam.Site/wwwroot/images/
+/node_modules/
 
 bin/
-node_modules/
 obj/
 
 *.user
