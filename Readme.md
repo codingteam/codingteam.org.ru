@@ -32,14 +32,14 @@ You may specify the application settings in the `appsettings.json` file. The
 Prepare for the build (set the dependencies up):
 
 ```console
-$ cd Codingteam.Site && npm ci
+$ npm ci
 ```
 
 Build the project:
 
 ```console
-$ cd Codingteam.Site && npm run build
-$ cd .. && dotnet build
+$ npm run build
+$ dotnet build
 ```
 
 Execute the local build:

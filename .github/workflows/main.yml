@@ -31,10 +31,8 @@ jobs:
         run: npm config set cache ${{ env.NPM_CACHE }}
       - name: NPM Clean Install
         run: npm ci
-        working-directory: ${{ github.workspace }}/Codingteam.Site
       - name: Frontend Build
         run: npm run build
-        working-directory: ${{ github.workspace }}/Codingteam.Site
 
       # Backend
       - name: Setup .NET Core SDK
