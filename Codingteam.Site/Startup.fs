@@ -4,21 +4,15 @@ open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
-open Microsoft.Extensions.Logging
 
-type Startup(env : IHostingEnvironment) =
+type Startup(env: IWebHostEnvironment) =
     let configuration =
         ConfigurationBuilder().SetBasePath(env.ContentRootPath).AddJsonFile(
             "appsettings.json",
             optional = false,
             reloadOnChange = true).Build()
 
-    member __.Configure(app: IApplicationBuilder, loggingBuilder: ILoggingBuilder): unit =
-        loggingBuilder
-            .AddConfiguration(configuration.GetSection "Logging")
-            .AddDebug()
-        |> ignore
-
+    member __.Configure(app: IApplicationBuilder): unit =
         app.UseStaticFiles() |> ignore
 
         app.UseMvc (fun routes ->
@@ -31,5 +25,7 @@ type Startup(env : IHostingEnvironment) =
             .AddOptions()
             .Configure<CtorSettings>(configuration.GetSection "CtorSettings")
             .AddSingleton(Clock.Default)
-            .AddMvc()
+            .AddMvc(fun options -> options.EnableEndpointRouting <- false)
+        |> ignore
+        services.AddControllersWithViews().AddRazorRuntimeCompilation()
         |> ignore
