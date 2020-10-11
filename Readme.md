@@ -111,6 +111,8 @@ command uses the Bash syntax; adapt for your shell if necessary):
 PORT=5000
 NAME=codingteam.org.ru
 VERSION=latest
+docker pull codingteam/codingteam.org.ru:$VERSION
+docker rm -f $NAME
 docker run -d --restart unless-stopped -p $PORT:80 --name $NAME codingteam/codingteam.org.ru:$VERSION
 ```
 
