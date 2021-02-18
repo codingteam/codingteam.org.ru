@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
@@ -13,6 +13,7 @@ ProjectSection(SolutionItems) = preProject
 	Readme.md = Readme.md
 	Dockerfile = Dockerfile
 	.dockerignore = .dockerignore
+	NuGet.Config = NuGet.Config
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{339BA2DC-3628-4E8E-98CC-264B5A3625AA}"
