@@ -20,8 +20,10 @@ type HomeController(options: IOptions<CtorSettings>, clock: Clock) =
 
     member this.Index() =
         this.ViewData.["LogUrl"] <- getTodayLogUrl ()
+        this.ViewData.["Title"] <- "Logs — Codingteam"
         this.View()
 
     [<Route("resources")>]
     member this.Resources() =
+        this.ViewData.["Title"] <- "Resources — Codingteam"
         this.View()
