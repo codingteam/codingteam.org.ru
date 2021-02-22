@@ -116,9 +116,17 @@ docker rm -f $NAME
 docker run -d --restart unless-stopped -p $PORT:80 --name $NAME codingteam/codingteam.org.ru:$VERSION
 ```
 
+Documentation
+-------------
+
+- [Changelog][changelog]
+- [License][license]
+
 [badge.docker]: https://img.shields.io/docker/v/codingteam/codingteam.org.ru?sort=semver
 
+[changelog]: CHANGELOG.md
 [codingteam.org.ru]: https://codingteam.org.ru/
 [docker-hub]: https://hub.docker.com/r/codingteam/codingteam.org.ru
 [dotnet]: https://dot.net/
+[license]: LICENSE.md
 [npm]: https://npmjs.com
