@@ -7,7 +7,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 This file only documents changes in the site engine, not any changes in the
 hosting infrastructure.
 
-## [Unreleased]
+## [1.0.2] - 2021-02-22
 ### Fixed
 - Pages now have proper titles
 
@@ -151,4 +151,5 @@ Initial version of the application, written in Scala using Spray framework.
 [0.7.7]: https://github.com/codingteam/codingteam.org.ru/compare/0.7.6...0.7.7
 [1.0.0]: https://github.com/codingteam/codingteam.org.ru/compare/0.7.7...1.0.0
 [1.0.1]: https://github.com/codingteam/codingteam.org.ru/compare/1.0.0...1.0.1
-[Unreleased]: https://github.com/codingteam/codingteam.org.ru/compare/1.0.1...HEAD
+[1.0.2]: https://github.com/codingteam/codingteam.org.ru/compare/1.0.1...v1.0.2
+[Unreleased]: https://github.com/codingteam/codingteam.org.ru/compare/v1.0.2...HEAD
