@@ -1,8 +1,16 @@
 ﻿name: Docker
 on:
   push:
+    branches:
+      - master
     tags:
       - '*'
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * 6' # every Saturday
+  workflow_dispatch:
 
 jobs:
   push:
@@ -18,3 +26,4 @@ jobs:
           repository: codingteam/codingteam.org.ru
           tag_with_ref: true
           tags: latest
+          push: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') && 'true' || 'false' }}
