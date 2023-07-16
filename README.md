@@ -6,8 +6,7 @@ This is the code that services [codingteam.org.ru][] website.
 Prerequisites
 -------------
 
-To build the application, you'll need to install [.NET Core SDK][dotnet]
-3.1.201+ and [NPM][npm] 6.14+.
+To build the application, you'll need to install [.NET Core SDK][dotnet] 3.1.201+.
 
 To run the application, [.NET Core Runtime][dotnet] 3.1 is required.
 
@@ -129,4 +128,3 @@ Documentation
 [docker-hub]: https://hub.docker.com/r/codingteam/codingteam.org.ru
 [dotnet]: https://dot.net/
 [license]: LICENSE.md
-[npm]: https://npmjs.com

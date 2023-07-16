@@ -1,7 +1,6 @@
 /.idea/
 /.vs/
 /Codingteam.Site/wwwroot/images/
-/node_modules/
 
 bin/
 obj/

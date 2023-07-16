@@ -4,6 +4,20 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <Version>1.0.2</Version>
     </PropertyGroup>
+
+    <Target Name="DownloadLogo" BeforeTargets="Build"
+            Inputs="$(MSBuildThisFile)"
+            Outputs="wwwroot\images\logo-transparent-dark.svg">
+        <Message Text="Downloading logo…" Importance="high" />
+        <DownloadFile SourceUrl="https://raw.githubusercontent.com/codingteam/logo/1.0.0/logo-transparent-dark.svg"
+                      DestinationFolder="wwwroot\images"
+                      DestinationFileName="logo-transparent-dark.svg" />
+        <Message Text="Verifying logo…" Importance="high" />
+        <VerifyFileHash File="wwwroot\images\logo-transparent-dark.svg"
+                        Hash="D46E4BAB19D15F209307B5AAA9CA65BEC7CCDF1EBDA039365D2D24C05FCC15E88BD6ABBE701B445DDC596516C4EA6BB9CB97396E44813BCC5FDBAB7AB0A734F3"
+                        Algorithm="SHA512"/>
+    </Target>
+
     <ItemGroup>
         <Compile Include="CtorSettings.fs" />
         <Compile Include="Clock.fs" />

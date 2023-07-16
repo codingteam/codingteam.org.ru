@@ -20,22 +20,8 @@ jobs:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
       DOTNET_CLI_TELEMETRY_OPTOUT: 1
       NUGET_PACKAGES: ${{ github.workspace }}/.github/nuget-packages
-      NPM_CACHE: ${{ github.workspace }}/.github/npm-cache
     steps:
       - uses: actions/checkout@v2
-
-      # Frontend
-      - name: NPM Cache
-        uses: actions/cache@v1
-        with:
-          path: ${{ env.NPM_CACHE }}
-          key: ${{ runner.os }}.npm.${{ hashFiles('**/npm-shrinkwrap.json') }}
-      - name: NPM Cache Setup
-        run: npm config set cache ${{ env.NPM_CACHE }}
-      - name: NPM Clean Install
-        run: npm ci
-      - name: Frontend Build
-        run: npm run build
 
       # Backend
       - name: Setup .NET Core SDK
