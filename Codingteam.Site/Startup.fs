@@ -23,8 +23,7 @@ type Startup(env: IWebHostEnvironment) =
     member __.ConfigureServices(services : IServiceCollection) : unit =
         services
             .AddOptions()
-            .Configure<CtorSettings>(configuration.GetSection "CtorSettings")
-            .AddSingleton(Clock.Default)
+            .Configure(configuration)
             .AddMvc(fun options -> options.EnableEndpointRouting <- false)
         |> ignore
         services.AddControllersWithViews().AddRazorRuntimeCompilation()

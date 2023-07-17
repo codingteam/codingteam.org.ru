@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Codingteam.Site", "Codingteam.Site\Codingteam.Site.fsproj", "{AEBF72FE-57AD-44FB-8C7D-6199A5F795BA}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Codingteam.Site.Tests", "Codingteam.Site.Tests\Codingteam.Site.Tests.fsproj", "{320D6097-7980-4D37-8834-E3200B981C47}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A11DCC5B-EC24-4A69-B6BB-FA2F0043D0F3}"
 ProjectSection(SolutionItems) = preProject
 	Dockerfile = Dockerfile
@@ -38,10 +36,6 @@ Global
 		{AEBF72FE-57AD-44FB-8C7D-6199A5F795BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEBF72FE-57AD-44FB-8C7D-6199A5F795BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEBF72FE-57AD-44FB-8C7D-6199A5F795BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{320D6097-7980-4D37-8834-E3200B981C47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{320D6097-7980-4D37-8834-E3200B981C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{320D6097-7980-4D37-8834-E3200B981C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{320D6097-7980-4D37-8834-E3200B981C47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2CF72807-47DC-483F-A386-5690E16A4350} = {339BA2DC-3628-4E8E-98CC-264B5A3625AA}

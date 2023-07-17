@@ -18,24 +18,8 @@ The only configuration parameter is the HTTP binding. Change the binding using
 `ASPNETCORE_URLS=http://0.0.0.0:80` means listening port 80 for all addresses.
 The default setting is `http://localhost:5000`.
 
-You may specify the application settings in the `appsettings.json` file. The
- main settings section is `CtorSettings`:
-
-```js
-"CtorSettings": {
-    "LogUrlPrefix": "http://<url to log service without last backslash>",
-    "LogTimeZoneOffset": 0 // time zone offset on the log server (in hours)
-},
-```
-
 Build
 -----
-
-Prepare for the build (set the dependencies up):
-
-```console
-$ npm ci
-```
 
 Build the project:
 
@@ -49,15 +33,6 @@ Run
 
 ```console
 $ dotnet run --project Codingteam.Site
-```
-
-Test
-----
-
-To run the project tests, execute the following command:
-
-```console
-$ dotnet test --configuration Release
 ```
 
 Publish
@@ -92,14 +67,12 @@ Deploy
 To install the application from Docker, run the following command:
 
 ```console
-$ docker run -d --restart unless-stopped -p:$PORT:80 --name $NAME -v $CONFIG:/app/appsettings.json codingteam/codingteam.org.ru:$VERSION
+$ docker run -d --restart unless-stopped -p:$PORT:80 --name $NAME codingteam/codingteam.org.ru:$VERSION
 ```
 
 Where
 - `$PORT` is the port you want to expose the application on
 - `$NAME` is the container name
-- `$CONFIG` is the **absolute** path to the configuration file override (if
-  necessary)
 - `$VERSION` is the version you want to deploy, or `latest` for the latest
   available one
 

@@ -7,6 +7,10 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 This file only documents changes in the site engine, not any changes in the
 hosting infrastructure.
 
+## [Unversioned] (1.1.0)
+### Removed
+- There's no longer a **Resources** page; all the resources are now listed on the main page.
+
 ## [1.0.2] - 2021-02-22
 ### Fixed
 - Pages now have proper titles

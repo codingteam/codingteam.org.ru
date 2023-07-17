@@ -19,8 +19,6 @@
     </Target>
 
     <ItemGroup>
-        <Compile Include="CtorSettings.fs" />
-        <Compile Include="Clock.fs" />
         <Compile Include="Controllers\HomeController.fs" />
         <Compile Include="Startup.fs" />
         <Compile Include="Program.fs" />
