@@ -7,7 +7,7 @@ Versioning](https://semver.org/spec/v2.0.0.html).
 This file only documents changes in the site engine, not any changes in the
 hosting infrastructure.
 
-## [Unversioned] (1.1.0)
+## [1.1.0] - 2023-07-18
 ### Removed
 - There's no longer a **Resources** page; all the resources are now listed on the main page.
 
@@ -156,4 +156,5 @@ Initial version of the application, written in Scala using Spray framework.
 [1.0.0]: https://github.com/codingteam/codingteam.org.ru/compare/0.7.7...1.0.0
 [1.0.1]: https://github.com/codingteam/codingteam.org.ru/compare/1.0.0...1.0.1
 [1.0.2]: https://github.com/codingteam/codingteam.org.ru/compare/1.0.1...v1.0.2
-[Unreleased]: https://github.com/codingteam/codingteam.org.ru/compare/v1.0.2...HEAD
+[1.1.0]: https://github.com/codingteam/codingteam.org.ru/compare/v1.0.2...v1.1.0
+[Unreleased]: https://github.com/codingteam/codingteam.org.ru/compare/v1.1.0...HEAD
