@@ -92,6 +92,7 @@ Documentation
 -------------
 
 - [Changelog][changelog]
+- [Maintainership][docs.maintainership]
 - [License][license]
 
 [badge.docker]: https://img.shields.io/docker/v/codingteam/codingteam.org.ru?sort=semver
@@ -99,5 +100,6 @@ Documentation
 [changelog]: CHANGELOG.md
 [codingteam.org.ru]: https://codingteam.org.ru/
 [docker-hub]: https://hub.docker.com/r/codingteam/codingteam.org.ru
+[docs.maintainership]: MAINTAINERSHIP.md
 [dotnet]: https://dot.net/
 [license]: LICENSE.md
