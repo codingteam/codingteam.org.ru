@@ -6,9 +6,9 @@ This is the code that services [codingteam.org.ru][] website.
 Prerequisites
 -------------
 
-To build the application, you'll need to install [.NET Core SDK][dotnet] 3.1.201+.
+To build the application, you'll need to install [.NET SDK][dotnet] 8.0+.
 
-To run the application, [.NET Core Runtime][dotnet] 3.1 is required.
+To run the application, [.NET Runtime][dotnet] 8.0 is required.
 
 Configure
 ---------
