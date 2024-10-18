@@ -5,7 +5,7 @@ Release
 -------
 To release a new version:
 1. Update the copyright year in the `LICENSE.md`, if required.
-2. Update the copyright year inside of the `<footer>` element of the `Codingteam.Site/Views/Shared/_Layout.cshtml`, if required.
+2. Update the copyright year inside the `<footer>` element of the `Codingteam.Site/Views/Shared/_Layout.cshtml`, if required.
 3. Choose a new version according to [Semantic Versioning][semver]. It should consist of three numbers (i.e. `1.0.0`).
 4. Make sure there's a properly formed version entry in the `CHANGELOG.md`.
 5. Update the `<Version>` property in the `Codingteam.Site/Codingteam.Site.fsproj` file.
