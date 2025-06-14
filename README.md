@@ -63,30 +63,22 @@ $ docker push codingteam/codingteam.org.ru:latest
 
 Deploy
 ------
-
-To install the application from Docker, run the following command:
-
-```console
-$ docker run -d --restart unless-stopped -p:$PORT:80 --name $NAME codingteam/codingteam.org.ru:$VERSION
+Consider using the following [Ansible][ansible] task for deployment:
+```yaml
+- name: Set up the Docker container
+  community.docker.docker_container:
+    name: codingteam.org.ru
+    image_name_mismatch: recreate
+    image: codingteam/codingteam.org.ru:{{ codingteam_org_ru_version }}
+    published_ports:
+      - '5000:5000'
+    restart_policy: unless-stopped
+    default_host_ip: ''
+    env:
+      ASPNETCORE_URLS: "http://+:5000"
 ```
 
-Where
-- `$PORT` is the port you want to expose the application on
-- `$NAME` is the container name
-- `$VERSION` is the version you want to deploy, or `latest` for the latest
-  available one
-
-For example, a production server may use the following settings (note this
-command uses the Bash syntax; adapt for your shell if necessary):
-
-```bash
-PORT=5000
-NAME=codingteam.org.ru
-VERSION=latest
-docker pull codingteam/codingteam.org.ru:$VERSION
-docker rm -f $NAME
-docker run -d --restart unless-stopped -p $PORT:80 --name $NAME codingteam/codingteam.org.ru:$VERSION
-```
+This will deploy the Docker container version `{{ codingteam_org_ru_version }}` and make it to listen port `5000` on the host.
 
 Documentation
 -------------
@@ -95,8 +87,8 @@ Documentation
 - [Maintainership][docs.maintainership]
 - [License][license]
 
+[ansible]: https://docs.ansible.com/
 [badge.docker]: https://img.shields.io/docker/v/codingteam/codingteam.org.ru?sort=semver
-
 [changelog]: CHANGELOG.md
 [codingteam.org.ru]: https://codingteam.org.ru/
 [docker-hub]: https://hub.docker.com/r/codingteam/codingteam.org.ru
