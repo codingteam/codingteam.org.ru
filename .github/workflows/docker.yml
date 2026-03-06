@@ -22,7 +22,7 @@ jobs:
       - name: Extract metadata for Docker
         if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: codingteam/codingteam.org.ru
           tags: type=ref,event=branch
